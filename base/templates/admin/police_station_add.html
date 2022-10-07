@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/admin/police_station_add" method="post">
+
+    <input type="text" name="ps_name" placeholder="Enter name of the Police Station:"><br><br>
+
+    <input type="text" name="lane_1" placeholder="Enter Address line 1"><br><br>
+
+    <input type="text" name="lane_2" placeholder="Enter Address line 2"><br><br>
+
+    <input type="text" name="district" placeholder="Enter District"><br><br>
+
+    <input type="text" name="state" placeholder="Enter State"><br><br>
+
+    <input type="submit">
+
+</form>
+
+{% with messages = get_flashed_messages() %}
+         {% if messages %}
+               {% for message in messages %}
+                    <p style="color: darkred">{{ message }}</p>
+               {% endfor %}
+         {% endif %}
+{% endwith %}
+
+<br><a href="/admin/admin_load_homepage">Back to Admin-Homepage</a>
+
+
+</body>
+</html>

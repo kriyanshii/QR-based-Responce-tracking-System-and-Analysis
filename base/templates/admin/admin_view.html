@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table,tr,td
+        {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<center>
+
+<table>
+    <tr>
+        <td>admin_firstname</td>
+        <td>admin_middlename</td>
+        <td>admin_lastname</td>
+        <td>username</td>
+        <td>date_of_birth</td>
+    </tr>
+
+    {% for i in alist %}
+    <tr>
+        <td>{{ i['first_name'] }}</td>
+        <td>{{ i['middle_name'] }}</td>
+        <td>{{ i['last_name'] }}</td>
+        <td>{{ i['user_name'] }}</td>
+        <td>{{ i['date_of_birth'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br><br>
+
+<a href="/admin/admin_load_homepage">Back to Admin-Homepage</a>
+
+</center>
+
+</body>
+</html>

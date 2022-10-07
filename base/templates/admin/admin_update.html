@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/admin/admin_update" method="post">
+
+    <input type="text" name="fn" value="{{ id_list["first_name"] }}"><br><br>
+
+    <input type="text" name="mn" value="{{ id_list["middle_name"] }}"><br><br>
+
+    <input type="text" name="ln" value="{{ id_list["last_name"] }}"><br><br>
+
+    <input type="text" name="un" value="{{ id_list["user_name"] }}"><br><br>
+
+    Please re-enter your date of birth<br>
+    <input type="date" name="dob" placeholder="{{ id_list["date_of_birth"] }}"><br><br>
+
+    <input type="password" name="pas" value="{{ id_list["password"] }}"><br>
+
+     {% with messages = get_flashed_messages() %}
+         {% if messages %}
+               {% for message in messages %}
+                    <p style="color: darkred">{{ message }}</p>
+               {% endfor %}
+         {% endif %}
+      {% endwith %}
+    <br>
+
+    <input type="submit">
+
+</form>
+
+<br><a href="/admin/admin_load_homepage">Back to Admin-Homepage</a>
+
+</body>
+</html>

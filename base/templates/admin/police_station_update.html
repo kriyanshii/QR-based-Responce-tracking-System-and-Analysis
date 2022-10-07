@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/admin/police_station_update" method="post">
+
+    <input type="text" name="ps_name" value="{{ id_list["police_station_name"] }}"><br><br>
+
+    <input type="text" name="lane_1" value="{{ id_list["lane_1"] }}"><br><br>
+
+    <input type="text" name="lane_2" value="{{ id_list["lane_2"] }}"><br><br>
+
+    <input type="text" name="district" value="{{ id_list["district"] }}"><br><br>
+
+    <input type="text" name="state" value="{{ id_list["state"] }}"><br>
+
+    <input type="hidden" value="{{ id_list["police_station_id"] }}" name="id">
+
+    <input type="submit">
+
+</form>
+
+{% with messages = get_flashed_messages() %}
+         {% if messages %}
+               {% for message in messages %}
+                    <p style="color: darkred">{{ message }}</p>
+               {% endfor %}
+         {% endif %}
+      {% endwith %}
+
+<br><a href="/admin/admin_load_homepage">Back to Admin-Homepage</a>
+
+
+</body>
+</html>

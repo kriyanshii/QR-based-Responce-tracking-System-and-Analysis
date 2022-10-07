@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/admin/login_page" method="post">
+
+    <input type="text" name="un" placeholder="Create your Username"><br><br>
+
+    <input type="password" name="pas" placeholder="Create Password"><br><br>
+
+    <input type="submit">
+
+</form>
+
+{% with messages = get_flashed_messages() %}
+         {% if messages %}
+               {% for message in messages %}
+                    <p style="color: darkred">{{ message }}</p>
+               {% endfor %}
+         {% endif %}
+{% endwith %}
+
+<br><br>
+<a href="/admin/load_registration_page"> To register</a>
+
+</body>
+</html>
