@@ -3,19 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+        :root{
+            --header-blue: #13315C;
+            --button-blue: #134074;
+            --light-blue: #EEF4ED;
+        }
+
+        body{
+            margin: 0;
+            font-family: 'Poppins';
+        }
+
+        .header{
+            height: 100px;
+            width: 100%;
+            background-color: var(--header-blue);
+        }
+
+        .header img{
+            width: 70px;
+        }
+
+
+    </style>
 </head>
 <body>
+    <header class="header">
+        <img src="../assets/Gujarat_Police_Logo.png">
+        <button class="user">
+            Gujarat Police Admin Side
+        </button>
+    </header>
 
-<h1>admin homepage</h1><br><br>
-
-<button><a href="/admin/admin_analytics">For Analytics</a></button><br><br><br><br>
-
-<button><a href="/admin/admin_view">View admin list</a></button><br><br>
-<button><a href="/admin/admin_delete">Delete your admin account</a></button><br><br>
-<button><a href="/admin/admin_edit">Edit your admin Account</a></button><br><br><br><br>
-
-<button><a href="/admin/load_police_station_registration">Add Police Station</a></button><br><br>
-<button><a href="/admin/police_station_view">View Police Station list</a></button><br><br>
+    <div class="home">
+        <div class="side-header">
+            <button><a href="/admin/admin_analytics">For Analytics</a></button><br><br><br><br>
+    
+            <button><a href="/admin/admin_view">View admin list</a></button><br><br>
+            <button><a href="/admin/admin_delete">Delete your admin account</a></button><br><br>
+            <button><a href="/admin/admin_edit">Edit your admin Account</a></button><br><br><br><br>
+    
+            <button><a href="/admin/load_police_station_registration">Add Police Station</a></button><br><br>
+            <button><a href="/admin/police_station_view">View Police Station list</a></button><br><br>
+        </div>
+    </div>
 
 </body>
 </html>
