@@ -64,7 +64,7 @@ def police_station_delete():
     police_station_vo.police_station_id = police_station_id
     police_station_dao.delete_ps(police_station_vo.police_station_id)
 
-    return redirect("/admin/police_station_view")
+    return redirect("/admin/load_police_station_registration")
 
 @app.route("/admin/police_station_edit")
 def police_station_edit():
@@ -110,7 +110,7 @@ def police_station_update():
 
     police_station_dao.update_ps(police_station_vo)
 
-    return redirect("/admin/police_station_view")
+    return redirect("/admin/load_police_station_registration")
 
 
 
