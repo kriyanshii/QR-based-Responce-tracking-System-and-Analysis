@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        table,tr,td
+        {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,6 +35,34 @@
                {% endfor %}
          {% endif %}
 {% endwith %}
+
+<br><br><br>
+
+<table>
+    <tr>
+        <td>police_station_name</td>
+        <td>address_line_1</td>
+        <td>address_line_2</td>
+        <td>district</td>
+        <td>state</td>
+        <td colspan="Action">Action</td>
+    </tr>
+
+    {% for i in ps_list %}
+    <tr>
+        <td>{{ i['police_station_name'] }}</td>
+        <td>{{ i['lane_1'] }}</td>
+        <td>{{ i['lane_2'] }}</td>
+        <td>{{ i['district'] }}</td>
+        <td>{{ i['state'] }}</td>
+        <td><a href="/admin/police_station_delete?id={{ i['police_station_id'] }}">Delete</a></td>
+        <td><a href="/admin/police_station_edit?id={{ i['police_station_id'] }}">Edit</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br><br>
+
 
 <br><a href="/admin/admin_load_homepage">Back to Admin-Homepage</a>
 

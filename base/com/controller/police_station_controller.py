@@ -7,7 +7,13 @@ app.secret_key = "khjasBDHJSGFJdsbfebaueiEU73gh714jaskg87Cabdjsajdb"
 
 @app.route("/admin/load_police_station_registration")
 def load_police_station_registration():
-    return render_template("/admin/police_station_add.html")
+
+    police_station_vo = PoliceStationVo()
+    police_station_dao = PoliceStationDao()
+
+    ps_list = police_station_dao.view_ps()
+
+    return render_template("/admin/police_station_add.html",ps_list=ps_list)
 
 @app.route("/admin/police_station_add",methods=["POST"])
 def police_station_add():
@@ -26,7 +32,8 @@ def police_station_add():
 
     if police_staion_name in ps_name_list:
         flash("Police Station Name already exist!!")
-        return render_template("/admin/police_station_add.html")
+        ps_list = police_station_dao.view_ps()
+        return render_template("/admin/police_station_add.html",ps_list=ps_list)
 
     police_station_vo.police_station_name = police_staion_name
     police_station_vo.lane_1 = lane_1
@@ -36,7 +43,7 @@ def police_station_add():
 
     police_station_dao.insert_ps(police_station_vo)
 
-    return redirect("/admin/police_station_view")
+    return redirect("/admin/load_police_station_registration")
 
 @app.route("/admin/police_station_view")
 def police_station_view():
