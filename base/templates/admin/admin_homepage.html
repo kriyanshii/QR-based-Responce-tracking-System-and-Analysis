@@ -3,15 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+                :root{
+                    --header-blue: #13315C;
+                    --button-blue: #134074;
+                    --light-blue: #EEF4ED;
+                    --tran-03: all 0.2s ease;
+                    --tran-03: all 0.3s ease;
+                    --tran-04: all 0.3s ease;
+                    --tran-05: all 0.3s ease;
+                }
+        
+                body{
+                    margin: 0;
+                    font-family: 'Poppins';
+                }
+        
+                .header{
+                    height: 100px;
+                    width: 100%;
+                    background-color: var(--header-blue);
+                    display: flex;
+                    color:white;
+                    /* justify-content: space-between; */
+                }
+        
+                .header img{
+                    width: 80px;
+                    margin-left: 20px;
+                }
+
+                .header h1{
+                    position: relative;
+                    left: 200px;
+                }
+
+                .home{
+                    height: 100%;
+                }
+                .sidebar {
+                    width: 200px;
+                    padding: 10px 14px;
+                    background: var(--header-blue);
+                    z-index: 100;
+                    color: white;
+                }
+                .sidebar a{
+                    text-decoration: none;
+                    color: white;
+                }
+                .sidebar li {
+                    height: 50px;
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 10px;
+                }
+                .sidebar .text {
+                    font-size: 17px;
+                    font-weight: 500;
+                    white-space: nowrap;
+                    opacity: 1;
+                }
+
+                footer{
+                    width: 100%;
+                    min-height: 61px;
+                    background-color: #17445b;
+                    float: left;
+                    padding: 20px 0 0 0;
+                    color: white;
+                }
+
+                .container{
+                    padding: auto;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .footerLink ul{
+                    list-style: none;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .footerLink li{
+                    padding: 20px;
+                }
+
+                .footerinner{
+                    background: var(--header-blue);
+                    color: white;
+                    text-align: center;
+                }
+            </style>
+
 </head>
 <body>
+    
+    <header class="header">
+        <img src="../assets/Gujarat_Police_Logo.png">
+        <h1>Gujarat Police Response Admin portal</h1>
+    </header>
+    <div class="home">
+        <nav class="sidebar">
+            <div class="menu-bar">
+              <div class="menu">
+                <!-- <li class="search-box">
+                  <i class='bx bx-search icon'></i>
+                  <input type="text" placeholder="Search...">
+                </li> -->
+                <ul class="menu-links">
+                  <li class="nav-link">
+                    <a href="#">
+                      <!-- <i class='bx bx-home-alt icon'></i> -->
+                      <span class="text nav-text">Home</span>
+                    </a>
+                  </li>
+                  <li class="nav-link">
+                    <a href="/admin/admin_analytics">
+                      <!-- <i class='bx bx-pie-chart-alt icon'></i> -->
+                      <span class="text nav-text">Analytics</span>
+                    </a>
+                  </li>
+                  <li class="nav-link">
+                    <a href="/admin/admin_view">
+                        <!-- <i class="fa-light fa-eye icon"></i> -->
+                       <span class="text nav-text">View Admins</span>
+                    </a>
+                  </li>
+                  <li class="nav-link">
+                    <a href="/admin/admin_edit">
+                        <!-- <i class="fa-light fa-eye icon"></i> -->
+                       <span class="text nav-text">Edit Account</span>
+                    </a>
+                  </li>
+                  <li class="nav-link">
+                    <a href="/admin/load_police_station_registration">
+                        <!-- <i class="fa-light fa-eye icon"></i> -->
+                       <span class="text nav-text">Edit Police Station</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="bottom-content">
+                <li class="">
+                  <a href="#">
+                    <!-- <i class='bx bx-log-out icon'></i> -->
+                    <span class="text nav-text">Logout</span>
+                  </a>
+                </li>
+              </div>
+            </div>
+        </nav>
 
-<h1>admin homepage</h1><br><br>
+    <!-- <div class="home">
+        <div class="home-page">
+        </div>
 
-<button><a href="/admin/admin_view">View admin list</a></button><br><br>
-<button><a href="/admin/admin_edit">Edit your admin Account</a></button><br><br><br><br>
 
-<button><a href="/admin/load_police_station_registration">Add Police Station</a></button><br><br>
+        <div class="side-header">
+            <button><a href="/admin/admin_edit">Edit your admin Account</a></button>        
+            <button><a href="/admin/load_police_station_registration">Add Police Station</a></button><br><br>
+        </div> -->
+    </div>
+
+    <footer">
+            <div class="containerWrap">
+                <div id="container">
+                    <div class="footerlogo">
+                        <div class="footerLink">
+                            <ul>
+                                <li class="">
+                                    <a href="https://www.gujaratindia.gov.in//" target="_blank">
+                                        <img alt="Government of Gujarat - External website that opens in a new window"
+                                         src="https://gad.gujarat.gov.in/images/gov-gujarat.jpg">
+                                    </a>
+                                </li>
+                                <li class="displayNone">
+                                    <a href="https://www.gujaratindia.gov.in/" target="_blank">
+                                    <img   src="https://gad.gujarat.gov.in/personnel/images/gov-gujarat1.jpg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://ceo.gujarat.gov.in/Information-For-Voters/" target="_blank">
+                                    <img src="https://gad.gujarat.gov.in/personnel/images/ceo-gujarat.jpg">
+                                    </a>
+                                </li>
+                                <li><a href="https://india.gov.in/" target="_blank">
+                                    <img title="" src="https://gad.gujarat.gov.in/images/india-gov.jpg">
+                                    </a>
+                                </li>
+                                </ul>
+                            </div>
+                        </div></div></div>
+            <div class="footerinner cf">
+                    <p>Copyright © 2021 General Administration Department, Govt. of Gujarat. All Rights Reserved. </p>
+                </p>
+                </div>
+            </div>
+        </footer>
 
 </body>
+
 </html>

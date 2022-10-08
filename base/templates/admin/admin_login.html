@@ -2,30 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>title</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+      :root{
+        --primary: #0B115C;
+        --button-blue: #134074;
+        --light-blue: #EEF4ED;
+      }
+
+      body{
+        font-family: 'Poppins';
+      }
+
+      .card{
+      margin: 100px auto;
+      width: 400px;
+      height: 550px;
+      background: white;
+      box-shadow: 0px 20px 20px 20px var(--light-blue);
+      border-radius: 20px;
+    }
+    .login{
+      padding: 30px;
+    }
+
+    .details{
+      margin: 20px 40px auto;
+    }
+
+    .username{
+      width: 100%;
+      height: 40px;
+      border-bottom: 2px solid var(--button-blue);
+      border-top: none;
+      border-right: none;
+      border-left: none;
+    }
+
+    .login{
+      text-align: center; 
+    }
+
+    .forgot{
+      text-align: right;
+      font-size: 5px;
+      color:#a9a9a9;
+    }
+
+    .submit{
+      background: var(--primary);
+      border-style: outset;
+      border-color:var(--primary);
+      margin-top: 20px;
+      width: 100%;
+      height: 40px;
+      border-radius: 20px;
+      color: white;
+      box-shadow: 5px 5px 5px #eee;
+    }
+
+    .submit:hover{
+      background: var(--button-blue);
+    }
+
+    .or{
+      text-align: center;
+      padding: 20px;
+    }
+
+    .message{
+      /* display: none; */
+      text-align: center;
+      padding: 20px;
+    }
+    </style>
 </head>
 <body>
 
-<form action="/admin/login_page" method="post">
+<form action="/admin/login_page" method="post" class="card">
 
-    <input type="text" name="un" placeholder="Create your Username"><br><br>
+    <h1 class="login"><b>Login</b></h1>
+    <div class="details">
+    <label for="un">Enter your name:</label><br/>
+      <input type="text" name="un" class="username" placeholder="Type your username"</input><br/><br/>
+    <label for="pas ">Password:</label><br/>
+    <input type="text" class="username" name="pas" required placeholder="Enter password"><br/><br/>
+      <p class="forgot"><font size="2">Forgot password?<font></p>
+    <button type="submit" name="submit" class="submit" value="Submit">Submit</button>
+    </div>
 
-    <input type="password" name="pas" placeholder="Create Password"><br><br>
+    <div class="message">
+      {% with messages = get_flashed_messages() %}
+           {% if messages %}
+                 {% for message in messages %}
+                        <p style="color: darkred">{{ message }}</p>
+                  {% endfor %}
+            {% endif %}
+    {% endwith %}
+    </div>
 
-    <input type="submit">
+    <div class="or">
+      <a class="register" href="/admin/load_registration_page">
+        To register
+      </a>
+    </div>
 
 </form>
-
-{% with messages = get_flashed_messages() %}
-         {% if messages %}
-               {% for message in messages %}
-                    <p style="color: darkred">{{ message }}</p>
-               {% endfor %}
-         {% endif %}
-{% endwith %}
-
-<br><br>
-<a href="/admin/load_registration_page"> To register</a>
 
 </body>
 </html>

@@ -3,22 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+              @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+:root{
+  --primary: #0B115C;
+  --button-blue: #134074;
+  --light-blue: #EEF4ED;
+}
+
+body{
+  font-family: 'Poppins';
+}
+
+.card{
+margin: 100px auto;
+width: 400px;
+height: 650px;
+background: white;
+box-shadow: 0px 20px 20px 20px var(--light-blue);
+border-radius: 20px;
+}
+.login{
+padding: 30px 30px 0px 30px;
+}
+
+.details{
+margin: 10px 40px auto;
+}
+
+.username{
+width: 100%;
+height: 40px;
+border-bottom: 2px solid var(--button-blue);
+border-top: none;
+border-right: none;
+border-left: none;
+}
+
+.login{
+text-align: center; 
+}
+
+.forgot{
+text-align: right;
+font-size: 5px;
+color:#a9a9a9;
+}
+
+.submit{
+background: var(--primary);
+border-style: outset;
+border-color:var(--primary);
+margin-top: 20px;
+width: 100%;
+height: 40px;
+border-radius: 20px;
+color: white;
+box-shadow: 5px 5px 5px #eee;
+}
+
+.submit:hover{
+background: var(--button-blue);
+}
+
+.or{
+text-align: center;
+padding: 20px;
+}
+
+.message{
+/* display: none; */
+text-align: center;
+padding: 20px;
+}
+    </style>
 </head>
 <body>
 
-<form action="/admin/registration_page" method="post">
+<form action="/admin/registration_page" method="post" class="card">
 
-    <input type="text" name="fn" placeholder="Enter your Firstname"><br><br>
+    <h1 class="login"><b>Register</b></h1>
+    <div class="details">
+        <label for="fn">Enter your First name:</label>
+        <input type="text" class="username" name="fn" ><br>
+        <label for="mn">Enter your middle name:</label><br/>
+        <input type="text" name="mn" class="username"><br/>
+        <label for="ln">Enter your last name:</label><br/>
+        <input type="text" name="ln" class="username"><br/>
+        <label for="un">Enter your last name:</label><br/>
+        <input type="text" name="un" class="username"><br/>
+        <label for="dob">Enter your date of birth:</label><br/>
+        <input type="date" name="dob" class="username"><br/>
+        <label for="pas ">Password:</label><br/>
+        <input type="text" class="username" name="pas" required placeholder="Enter password"><br/><br/>
+      <!-- <p class="forgot"><font size="2">Forgot password?<font></p> -->
+        <button type="submit" name="submit" class="submit" value="Submit">Submit</button>
+    </div>
 
-    <input type="text" name="mn" placeholder="Enter your Middlename"><br><br>
+    <!-- <input type="text" name="mn" placeholder="Enter your Middlename"><br><br> -->
 
-    <input type="text" name="ln" placeholder="Enter your Lastname"><br><br>
+    <!-- <input type="text" name="ln" placeholder="Enter your Lastname"><br><br> -->
 
-    <input type="text" name="un" placeholder="Create your Username"><br><br>
+    <!-- <input type="text" name="un" placeholder="Create your Username"><br><br> -->
 
-    <input type="date" name="dob" placeholder="Enter Date of Birth"><br><br>
+    <!-- <input type="date" name="dob" placeholder="Enter Date of Birth"><br><br> -->
 
-    <input type="password" name="pas" placeholder="Create Password"><br>
+    <!-- <input type="password" name="pas" placeholder="Create Password"><br> -->
 
     <p style="color: darkred">
      {% with messages = get_flashed_messages() %}
@@ -30,7 +122,7 @@
       {% endwith %}
     </p>
 
-    <input type="submit">
+    <!-- <input type="submit"> -->
 
 </form>
 

@@ -3,36 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+        :root{
+        --primary: #0B115C;
+        --button-blue: #134074;
+        --light-blue: #EEF4ED;
+        }
+
+        body{
+        font-family: 'Poppins';
+        }
+
+        .card{
+        margin: 100px auto;
+        width: 400px;
+        height: 700px;
+        background: white;
+        box-shadow: 0px 20px 20px 20px var(--light-blue);
+        border-radius: 20px;
+        }
+        .login{
+        padding: 30px;
+        }
+
+        .details{
+        margin: 20px 40px auto;
+        }
+
+        .username{
+        width: 100%;
+        height: 40px;
+        border-bottom: 2px solid var(--button-blue);
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        }
+
+        .login{
+        text-align: center; 
+        }
+
+        .forgot{
+        text-align: right;
+        font-size: 5px;
+        color:#a9a9a9;
+        }
+
+        .submit{
+        background: var(--primary);
+        border-style: outset;
+        border-color:var(--primary);
+        margin-top: 20px;
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        color: white;
+        box-shadow: 5px 5px 5px #eee;
+        }
+
+        .submit:hover{
+        background: var(--button-blue);
+        }
+
+        span{
+            color: red;
+        }
+
+        .or{
+        text-align: center;
+        padding: 20px;
+        /* text-decoration: none; */
+        }
+
+        .message{
+        /* display: none; */
+        text-align: center;
+        padding: 20px;
+        }
+    </style>
 </head>
 <body>
 
-<form action="/admin/police_station_update" method="post">
+<form class="card" action="/admin/police_station_update" method="post">
+    <h2 class="login">Update Station Details</h2>
+    <div class="details">
+        <label for="ps_name">Enter station: <span>*</span></label><br/>
+        <input class="username" type="text" required name="ps_name" value="{{ id_list["police_station_name"] }}"><br><br>
+        <label for="lane_1">Enter Address Line 1: <span>*</span></label><br/>
+        <input class="username"  type="text" required name="lane_1" value="{{ id_list["lane_1"] }}"><br><br>
+        <label for="lane_2">Enter Address Line 1:</label><br/>
+        <input class="username" type="text" name="lane_2" value="{{ id_list["lane_2"] }}"><br><br>
+        <label for="district">Enter district <span>*</span></label><br/>
+        <input class="username" type="text" required name="district" value="{{ id_list["district"] }}"><br><br>
+        <label for="state">Enter state <span>*</span></label><br/>
+        <input class="username" type="text" required name="state" value="{{ id_list["state"] }}"><br>
+        <!-- <label for="state">Enter state</label><br/> -->
+        <input class="username" type="hidden" value="{{ id_list["police_station_id"] }}" name="id">
+    
+        <input class="submit" type="submit">
 
-    <input type="text" name="ps_name" value="{{ id_list["police_station_name"] }}"><br><br>
-
-    <input type="text" name="lane_1" value="{{ id_list["lane_1"] }}"><br><br>
-
-    <input type="text" name="lane_2" value="{{ id_list["lane_2"] }}"><br><br>
-
-    <input type="text" name="district" value="{{ id_list["district"] }}"><br><br>
-
-    <input type="text" name="state" value="{{ id_list["state"] }}"><br>
-
-    <input type="hidden" value="{{ id_list["police_station_id"] }}" name="id">
-
-    <input type="submit">
-
-</form>
-
-{% with messages = get_flashed_messages() %}
+        <div class="message">
+            {% with messages = get_flashed_messages() %}
          {% if messages %}
                {% for message in messages %}
                     <p style="color: darkred">{{ message }}</p>
                {% endfor %}
          {% endif %}
       {% endwith %}
+        </div>
 
-<br><a href="/admin/admin_load_homepage">Back to Admin-Homepage</a>
+        <div class="or">
+            <a style="color: grey; font-size: 15px;" href="/admin/admin_load_homepage">Back to Admin-Homepage</a>
+        </div>
+    </div>
+
+</form>
+
 
 
 </body>
