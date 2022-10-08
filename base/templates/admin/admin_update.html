@@ -3,28 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+  
+        :root{
+          --primary: #0B115C;
+          --button-blue: #134074;
+          --light-blue: #EEF4ED;
+        }
+  
+        body{
+          font-family: 'Poppins';
+          margin: 0;
+        }
+
+        .header{
+            height: 110px;
+            width: 100%;
+            background-color: var(--primary);
+            display: flex;
+            color:white;
+            /* justify-content: space-between; */
+        }
+
+        .header img{
+            width: 80px;
+            margin-left: 20px;
+        }
+
+        .header h1{
+            position: relative;
+            left: 200px;
+        }
+  
+        .card{
+        margin: 50px auto;
+        width: 400px;
+        height: 630px;
+        background: white;
+        box-shadow: 0px 20px 20px 20px var(--light-blue);
+        border-radius: 20px;
+      }
+      .login{
+        padding: 30px;
+      }
+  
+      .details{
+        margin: 20px 40px auto;
+      }
+  
+      .username{
+        width: 100%;
+        height: 40px;
+        border-bottom: 2px solid var(--button-blue);
+        border-top: none;
+        border-right: none;
+        border-left: none;
+      }
+  
+      .login{
+        text-align: center; 
+      }
+  
+      .forgot{
+        text-align: right;
+        font-size: 5px;
+        color:#a9a9a9;
+      }
+
+      .buttons{
+        display: flex;
+      }
+  
+      .submit{
+        background: var(--primary);
+        border-style: outset;
+        border-color:var(--primary);
+        margin-top: 20px;
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        color: white;
+        box-shadow: 5px 5px 5px #eee;
+      }
+  
+      .submit:hover{
+        background: var(--button-blue);
+      }
+
+      .delete{
+        background: rgb(206, 0, 0);
+        border: rgb(206, 0, 0);
+        color: white;
+      }
+  
+      .or{
+        text-align: center;
+        padding: 20px;
+      }
+  
+      .message{
+        /* display: none; */
+        text-align: center;
+        padding: 20px;
+      }
+      </style>
 </head>
 <body>
 
+    <header class="header">
+        <a href="/admin/admin_load_homepage"><img src="../assets/Gujarat_Police_Logo.png">
+        </a>
+        
+        <h1>Gujarat Police Response Admin portal</h1>
+    </header>
+
 <form action="/admin/admin_update" method="post" class="card">
 
-    <!-- <h1 class="login"><b>Register</b></h1>
+    <h1 class="login"><b>Update</b></h1>
     <div class="details">
         <label for="fn">Enter your First name:</label>
-        <input type="text" name="fn" value="{{ id_list["first_name"] }}"><br>
+        <input class="username" type="text" name="fn" value="{{ id_list["first_name"] }}"><br>
         <label for="mn">Enter your middle name:</label><br/>
-        <input type="text" name="mn" value="{{ id_list["middle_name"] }}"><br>
+        <input class="username" type="text" name="mn" value="{{ id_list["middle_name"] }}"><br>
         <label for="ln">Enter your last name:</label><br/>
-        <input type="text" name="ln" value="{{ id_list["last_name"] }}"><br>
+        <input class="username" type="text" name="ln" value="{{ id_list["last_name"] }}"><br>
         <label for="mn">Enter your date of birth:</label><br/>
         <input type="date" name="dob" class="username"><br/>
         <label for="pas ">Password:</label><br/>
         <input type="text" class="username" name="pas" required placeholder="Enter password"><br/><br/>
-      <!-- <p class="forgot"><font size="2">Forgot password?<font></p> -->
-        <button type="submit" name="submit" class="submit" value="Submit">Submit</button>
-    </div> -->
 
-    <input type="text" name="fn" value="{{ id_list["first_name"] }}"><br><br>
+        <div class="message">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                  {% for message in messages %}
+                       <p style="color: darkred">{{ message }}</p>
+                  {% endfor %}
+            {% endif %}
+         {% endwith %}s
+        </div>
+        <div class="buttons">
+            <button type="submit" name="submit" class="submit" value="update">Submit</button>
+            or
+            <button class="submit delete"><a style="color: white; text-decoration: none" href="/admin/admin_delete">Delete account</a></button>
+        </div>
+        <br><br>
+
+        
+    </div> 
+
+    <!-- <input type="text" name="fn" value="{{ id_list["first_name"] }}"><br><br>
 
     <input type="text" name="mn" value="{{ id_list["middle_name"] }}"><br><br>
 
@@ -35,26 +163,13 @@
     Please re-enter your date of birth<br>
     <input type="date" name="dob" placeholder="{{ id_list["date_of_birth"] }}"><br><br>
 
-    <input type="password" name="pas" value="{{ id_list["password"] }}"><br>
-
-     {% with messages = get_flashed_messages() %}
-         {% if messages %}
-               {% for message in messages %}
-                    <p style="color: darkred">{{ message }}</p>
-               {% endfor %}
-         {% endif %}
-      {% endwith %}
+    <input type="password" name="pas" value="{{ id_list["password"] }}"><br> -->
     <br>
 
-    <input type="submit" value="Update">
+    <!-- <input type="submit" value="Update"> -->
 
 </form>
 
-<br><br>
-
-<button><a href="/admin/admin_delete">Delete your admin account</a></button><br><br>
-
-<br><a href="/admin/admin_load_homepage">Back to Admin-Homepage</a>
 
 </body>
 </html>

@@ -14,10 +14,30 @@
 
         body{
         font-family: 'Poppins';
+        margin: 0;
+        }
+
+        .header{
+            height: 110px;
+            width: 100%;
+            background-color: var(--primary);
+            display: flex;
+            color:white;
+            /* justify-content: space-between; */
+        }
+
+        .header img{
+            width: 80px;
+            margin-left: 20px;
+        }
+
+        .header h1{
+            position: relative;
+            left: 200px;
         }
 
         .card{
-        margin: 100px auto;
+        margin: 50px auto;
         width: 400px;
         height: 700px;
         background: white;
@@ -55,7 +75,7 @@
         background: var(--primary);
         border-style: outset;
         border-color:var(--primary);
-        /* margin-top: 20px; */
+        margin-top: 20px;
         padding: 10px;
         width: 100%;
         height: 40px;
@@ -117,9 +137,14 @@
     </style>
 </head>
 <body>
+    <header class="header">
+        <a href="/admin/admin_load_homepage"><img src="../assets/Gujarat_Police_Logo.png">
+        </a>
+        
+        <h1>Gujarat Police Response Admin portal</h1>
+    </header>
 
 <form class="card" action="/admin/police_station_add" method="post">
-
     <h2 class="login">Add Station Details</h2>
     <div class="details">
         <label for="ps_name">Enter station: <span>*</span></label><br/>

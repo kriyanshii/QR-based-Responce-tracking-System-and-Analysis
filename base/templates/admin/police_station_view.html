@@ -4,42 +4,116 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+        :root{
+            --header-blue: #13315C;
+            --button-blue: #134074;
+            --light-blue: #EEF4ED;
+        }
+    
+    body{
+        margin: 0;
+        font-family: 'Poppins';
+    }
+        .header{
+            height: 110px;
+            width: 100%;
+            background-color: var(--header-blue);
+            display: flex;
+            color:white;
+            /* justify-content: space-between; */
+        }
+
+        .header img{
+            width: 80px;
+            margin-left: 20px;
+        }
+
+        .header h1{
+            position: relative;
+            left: 200px;
+        }
         table,tr,td
         {
-            border: 1px solid black;
+            border: 1px solid transparent;
         }
+
+        .table{
+            margin: 20px auto;
+        }
+
+        td{
+            width: 100px;
+        }
+
+        .head{
+            background: var(--header-blue);
+            color: white;
+            font-size: large;
+        }
+    
+        .tbody tr:nth-child(odd) {
+        background-color: var(--light-blue);
+        }
+
+        .tbody tr:nth-child(even) {
+        background-color: white;
+        }
+        
+        .or{
+        text-align: center;
+        padding: 20px;
+        }
+
+        .or a{
+            text-decoration: none;
+            color: gray;
+        }
+        table,tr,td
+            {
+                border: 1px solid transparent;
+            }
     </style>
 </head>
 <body>
 
-<center>
 
-<table>
-    <tr>
+    <header class="header">
+        <a href="/admin/admin_load_homepage"><img src="../assets/Gujarat_Police_Logo.png">
+        </a>
+        <h1>Gujarat Police Response Admin portal</h1>
+    </header>
+<table class="table">
+    <tr class="head">
         <td>police_station_name</td>
         <td>address_line_1</td>
         <td>address_line_2</td>
         <td>district</td>
         <td>state</td>
-        <td colspan="Action">Action</td>
+        <td colspan="2">Action</td>
     </tr>
 
-    {% for i in ps_list %}
-    <tr>
-        <td>{{ i['police_station_name'] }}</td>
-        <td>{{ i['lane_1'] }}</td>
-        <td>{{ i['lane_2'] }}</td>
-        <td>{{ i['district'] }}</td>
-        <td>{{ i['state'] }}</td>
-        <td><a href="/admin/police_station_delete?id={{ i['police_station_id'] }}">Delete</a></td>
-        <td><a href="/admin/police_station_edit?id={{ i['police_station_id'] }}">Edit</a></td>
-    </tr>
-    {% endfor %}
+    <div class="tbody">
+        {% for i in ps_list %}
+        <tr class="trow">
+            <td>{{ i['police_station_name'] }}</td>
+            <td>{{ i['lane_1'] }}</td>
+            <td>{{ i['lane_2'] }}</td>
+            <td>{{ i['district'] }}</td>
+            <td>{{ i['state'] }}</td>
+            <td><a href="/admin/police_station_delete?id={{ i['police_station_id'] }}">Delete</a></td>
+            <td><a href="/admin/police_station_edit?id={{ i['police_station_id'] }}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </div>
 </table>
 
 <br><br>
 
-<a href="/admin/admin_load_homepage">Back to Admin-Homepage</a>
+<!-- <div class="or">
+    <a href="/admin/admin_load_homepage">Back to Admin-Homepage</a>
+</div> -->
 
 
 
