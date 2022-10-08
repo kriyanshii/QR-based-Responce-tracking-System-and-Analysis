@@ -6,7 +6,8 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <!-- <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/> -->
     <style>
 
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
@@ -36,7 +37,7 @@
         
                 .header img{
                     width: 80px;
-                    margin-left: 20px;
+                    margin-left: 50px;
                 }
 
                 .header h1{
@@ -49,6 +50,7 @@
                 }
                 .sidebar {
                     width: 200px;
+                    height: 400px;
                     padding: 10px 14px;
                     background: var(--header-blue);
                     z-index: 100;
@@ -63,6 +65,7 @@
                     list-style: none;
                     display: flex;
                     align-items: center;
+                    justify-content: space-between;
                     margin-top: 10px;
                 }
                 .sidebar .text {
@@ -72,25 +75,48 @@
                     opacity: 1;
                 }
 
+                .home{
+                    display: flex;
+                }
+
+                .welcome{
+                    margin: 10px auto;
+                    background-image: url('../assets/Gujarat_Police_Logo.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    opacity: 0.3;
+                }
+
+                .hometext{
+                    margin: 100px auto;
+                }
                 footer{
                     width: 100%;
                     min-height: 61px;
                     background-color: #17445b;
                     float: left;
-                    padding: 20px 0 0 0;
+                    /* padding: 20px 0 0 0; */
                     color: white;
+                }
+
+                .footerlogo{
+                    /* background: var(--header-blue); */
+                    margin: 0;
                 }
 
                 .container{
                     padding: auto;
                     display: flex;
                     justify-content: center;
+                    margin: 0;
+                    background: var(--header-blue);
                 }
 
                 .footerLink ul{
                     list-style: none;
                     display: flex;
                     justify-content: center;
+                    margin: 0;
                 }
 
                 .footerLink li{
@@ -101,6 +127,10 @@
                     background: var(--header-blue);
                     color: white;
                     text-align: center;
+                }
+
+                .footerinner p{
+                    margin: 0;
                 }
             </style>
 
@@ -147,21 +177,17 @@
                   <li class="nav-link">
                     <a href="/admin/load_police_station_registration">
                         <!-- <i class="fa-light fa-eye icon"></i> -->
-                       <span class="text nav-text">Edit Police Station</span>
+                       <span class="text nav-text">Add Police Station</span>
                     </a>
                   </li>
                 </ul>
-              </div>
-              <div class="bottom-content">
-                <li class="">
-                  <a href="#">
-                    <!-- <i class='bx bx-log-out icon'></i> -->
-                    <span class="text nav-text">Logout</span>
-                  </a>
-                </li>
-              </div>
+            </div>
             </div>
         </nav>
+
+        <div class="welcome">
+           <h1 class="hometext">Welcome to admin portal of Gujarat Police!</h1> 
+        </div>
 
     <!-- <div class="home">
         <div class="home-page">
